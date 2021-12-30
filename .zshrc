@@ -1,11 +1,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/user/.oh-my-zsh"
+export ZSH="/home/kedves/.oh-my-zsh"
 
-ZSH_THEME="lambda" #zsh тема
+ZSH_THEME="dpoggi" #zsh тема
 
-plugins=(git command-time sudo) #zsh плагины
+plugins=(git command-time sudo zsh-completions) #zsh плагины
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,6 +50,7 @@ if [ -f /usr/bin/grc ]; then
  alias ls='ls --color=auto'
 fi
 
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh #автодополнение
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh #подсветка синтаксиса
 source /usr/share/doc/pkgfile/command-not-found.zsh #замена хука "Команда не найдена"
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh #автокоррекция
@@ -77,8 +78,8 @@ ex () {
  fi
 }
 
-autoload -Uz compinit 
-compinit
+autoload -U compinit
+
 unsetopt correct_all  
 setopt correct
 setopt HIST_IGNORE_SPACE
